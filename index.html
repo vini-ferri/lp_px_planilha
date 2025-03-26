@@ -92,14 +92,14 @@
                 state: formData.get('state'),
                 city: formData.get('city')
             };
-
-            fetch('https://script.google.com/macros/s/AKfycbx_ueprjXQE9qmryO2MuLs4RMvd3G8UsgunhdZn90-YxHAcTFftTpN8CQBHt09NMM0M/exec', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data) // Envio dos dados como JSON
-                })
+            
+            fetch('https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbx_ueprjXQE9qmryO2MuLs4RMvd3G8UsgunhdZn90-YxHAcTFftTpN8CQBHt09NMM0M/exec', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
                 .then(response => response.json())
                 .then(responseData => {
                     console.log('Success:', responseData);
